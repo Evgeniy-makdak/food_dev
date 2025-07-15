@@ -1,0 +1,87 @@
+.b-pag-tab {
+  height: 48px;
+  border: 1px solid #30120733;
+  width: 100%;
+  border-radius: 100px;
+  display: flex;
+}
+
+.b-pag-tab__item {
+  width: 50%;
+  height: 100%;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #301207;
+  transition: .6s;
+  background-color: transparent;
+}
+
+.b-pag-tab__item--active {
+  background: #6C452B;
+  color: #fff;
+}
+
+.b-pag-tab-box {
+  display: none;
+}
+
+.b-pag-tab-box--active {
+  display: block;
+}
+
+.b-pag-tab-box-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.b-pag-tab-box-wrap-elem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.b-pag-tab-box-wrap-elem p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #00000099;
+}
+
+.b-pag-tab-box-wrap-elem span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #6C452B;
+}
+
+.b-pag-tab-box-wrap__elem {
+  background-color: #3213084D;
+  width: 1px;
+  height: 48px;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.b-pag-tab-elem__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #B56C274D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b-pag-tab-elem__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #301207;
+}

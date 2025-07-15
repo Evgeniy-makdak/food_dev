@@ -1,0 +1,19 @@
+.slider-restaurant-photo {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; // Скрываем скроллбар для Firefox
+  -ms-overflow-style: none; // Скрываем скроллбар для IE и Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Скрываем скроллбар для Chrome, Safari и Opera
+  }
+
+  &__image {
+    flex: 0 0 auto;
+    object-fit: cover;
+    scroll-snap-align: start;
+  }
+}

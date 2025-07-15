@@ -1,0 +1,119 @@
+.map {
+  width: 100wh;
+  height: 100dvh;
+  overflow: scroll;
+  position: relative;
+
+  .personal-location {
+    position: absolute;
+    top: 168px;
+    left: 93px;
+
+  }
+
+  .restaurant-marker {
+    position: absolute;
+
+    // top: 150px;
+    // left: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+
+    // background-image: url('path-to-your-restaurant-marker-image');
+    // background-size: cover;
+
+    .map-wrap-discription {
+      width: 160px;
+      height: 60px;
+      box-shadow: 0px 8px 16px 0px rgba(48, 18, 7, 0.1215686275);
+      border-radius: 16px;
+      position: absolute;
+      // top: 16px;
+      background-color: #fff;
+      // left: 100px;
+      top: -70px;
+      // display: flex;
+      // flex-direction: column;
+      padding: 12px;
+      align-items: center;
+
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: solid 16px transparent;
+        border-top: solid 16px #fff;
+        position: absolute;
+        bottom: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .rating-wrapper {
+      position: absolute;
+      right: 60px;
+      top: -20px;
+    }
+
+    b.title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 143%;
+      color: #071f2b
+    }
+
+    p.average-info {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 117%;
+      color: rgba(7, 31, 43, 0.7);
+      display: flex;
+      justify-content: space-between;
+
+      b {
+        color: #071f2b;
+      }
+    }
+
+    .map-marker-wrapper {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .map-marker {
+
+        width: 32px;
+        height: 32px;
+        background: #071f2b;
+        border: 2px solid #fff;
+        border-radius: 100px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background-image: url('path-to-your-map-pointer-image');
+        // background-size: cover;
+        transition: all 0.1s ease;
+      }
+
+      .active-marker {
+        width: 40px;
+        height: 40px;
+        transition: all 0.1s ease;
+        z-index: 8;
+      }
+    }
+
+
+  }
+
+}
+

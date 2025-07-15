@@ -1,0 +1,40 @@
+.navigations {
+  display: flex;
+  gap: 8px;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; // Скрываем скроллбар для Firefox
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none; // Скрываем скроллбар для Chrome, Safari и Opera
+  }
+
+  a {
+    flex: 0 0 auto;
+    object-fit: cover;
+    scroll-snap-align: start;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    color: #071f2b;
+
+    border-radius: 16px;
+    padding: 12px 16px;
+
+    background: #fff;
+
+    border: 1px solid rgba(7, 31, 43, 0.2);
+
+    &.active {
+      background: #071f2b;
+      color: #fff;
+      border: 1px solid #071f2b;
+    }
+
+
+  }
+}

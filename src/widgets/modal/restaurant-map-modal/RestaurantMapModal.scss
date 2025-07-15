@@ -1,0 +1,41 @@
+.restaurant-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+  padding-bottom: 50px;
+  // pointer-events: none;
+
+}
+
+.restaurant-modal-content {
+  border: 1px solid rgba(7, 31, 43, 0.2);
+  border-radius: 20px;
+  padding: 16px 12px;
+  width: 361px;
+
+  box-shadow: 0 8px 16px 0 rgba(7, 31, 43, 0.12);
+  background: #fff;
+
+  div {
+    // width: 361px;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+
+  }
+}
+
+// .restaurant-modal-overlay {
+//   pointer-events: none;
+// }
+
+// .restaurant-modal-content {
+//   pointer-events: auto;
+// }

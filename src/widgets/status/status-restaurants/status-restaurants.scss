@@ -1,0 +1,76 @@
+.b-page-box {
+  border: 1px solid #30120747;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.b-page-box--big {
+  padding: 16px;
+}
+
+.b-page-box--middle {
+  padding: 16px 12px;
+}
+
+.b-page-box__tittle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #321308;
+}
+
+.b-page-box__subtittle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.b-page-box__subtittle--opacity70 {
+  color: #000000B2;
+}
+
+.b-page-box-line {
+  background: #3213084D;
+  height: 1px;
+  margin: 12px 0;
+}
+
+.b-page-box-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.b-page-box__small-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #00000099;
+}
+
+.b-page-box-marker {
+  height: 40px;
+  border-radius: 100px;
+  width: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b-page-box-marker--green {
+  background: #CEDD40;
+}
+
+.b-page-box-marker--red {
+  background: #B71919;
+}
+
+.b-page-box-marker--red p {
+  color: #FFFFFFCC;
+}
+
+.b-page-box-marker p {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}

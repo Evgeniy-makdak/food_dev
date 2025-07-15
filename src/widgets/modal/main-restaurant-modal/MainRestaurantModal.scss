@@ -1,0 +1,101 @@
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 57%;
+  transform: translateY(calc(100% - 200px)); // Показываем только верхнюю часть
+  z-index: 9;
+
+
+  &.open {
+    transform: translateY(0);
+  }
+
+  &.full-height {
+    height: 100% !important;
+    transform: translateY(0) !important;
+  }
+
+  .header-line--wrapper {
+    width: 100%;
+    .header-line {
+      width: 40px;
+      height: 8px;
+      background-color: #ccc;
+      margin: 10px auto;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+
+
+  .modal--wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 20px 140px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .test {
+    margin-bottom: 20px;
+  }
+
+  .search-panel{
+    input{
+      pointer-events: none;
+    }
+  }
+}
+
+
+
+.header-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .city {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 16px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+
+    box-shadow: 0 8px 16px 0 rgba(48, 18, 7, 0.12);
+    background: #fff;
+  }
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.redirect--input {
+  border: 1px solid rgba(7, 31, 43, 0.2);
+  border-radius: 16px;
+  padding: 8px 16px;
+  box-shadow: 0 8px 16px 0 rgba(7, 31, 43, 0.12);
+  background: #fff;
+}

@@ -1,0 +1,173 @@
+// SCSS Variables
+$primary-color: #6C452B;
+$border-color: rgba(48, 18, 7, 0.28);
+$shadow-color: rgba(48, 18, 7, 0.12);
+$text-color: #301207;
+$white: #fff;
+
+.b-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: $white;
+  box-sizing: border-box;
+
+  border-radius: 20px 20px 0 0;
+  // border: 1px solid red;
+
+  // Height modifiers
+  &-h124 {
+    height: 90px;
+  }
+
+  &-h100 {
+    height: 100px;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+}
+
+.b-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // border-radius: 100px;
+  height: 80px;
+  // border: 1px solid $border-color;
+  // box-shadow: 0 8px 16px 0 $shadow-color;
+  width: 100%;
+  background-color: $white;
+  // padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.b-bottom-nav-item {
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  // width: 25%;
+  width: 70px;
+  // border-radius: 100px;
+  height: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  p {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    text-align: center;
+    color: rgba(7, 31, 43, 0.5);
+  }
+
+  // Active state
+  &--active {
+    // background: rgba(7, 31, 43, 0.5);
+
+    // width: 105px;
+    flex-shrink: 0;
+
+    p {
+      // color: $white;
+
+      color: #db3702;
+
+    }
+  }
+
+  // Hover effect for non-active items
+  // &:not(&--active):hover {
+  //   background-color: rgba($primary-color, 0.1);
+  // }
+}
+
+// Стили для корзины с индикатором
+.basket-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  // Легкая подсветка при наличии товаров
+  &:has(.basket-badge) {
+    transform: scale(1.05);
+  }
+}
+
+.basket-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.basket-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #FF4444;
+  color: white;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border: 2px solid white;
+  z-index: 1;
+
+  // Анимация появления
+  animation: badgeAppear 0.3s ease-out;
+
+  // Для активного состояния корзины
+  &--active {
+    border-color: $primary-color;
+  }
+}
+
+// Анимация появления индикатора
+@keyframes badgeAppear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Адаптивность для маленьких экранов
+@media (max-width: 360px) {
+  .basket-badge {
+    min-width: 16px;
+    height: 16px;
+    font-size: 10px;
+    top: -6px;
+    right: -6px;
+  }
+}

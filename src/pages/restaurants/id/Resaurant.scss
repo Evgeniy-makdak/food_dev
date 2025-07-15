@@ -1,0 +1,234 @@
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding-bottom: 170px;
+
+  .name--header {}
+
+  .slider--header {}
+
+  .intro {}
+
+  .description {
+    h4 {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 125%;
+      color: #212121;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: rgba(33, 33, 33, 0.8);
+
+      button {}
+    }
+  }
+
+  .map--info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: auto;
+
+    .stations {
+      display: flex;
+      gap: 12px;
+
+      .metro-station {
+        display: flex;
+        gap: 8px;
+
+        .circle {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+        }
+      }
+
+    }
+
+  }
+
+  .awards {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    h2 {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 133%;
+      color: #212121;
+    }
+  }
+
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    h2 {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 133%;
+      color: #212121;
+    }
+
+    &--cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+    }
+  }
+
+  .extra_seat {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 20px;
+    padding: 16px;
+
+    h2 {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 140%;
+      color: #212121;
+
+    }
+
+    &--list {
+      padding: 0 13px;
+
+
+      .parking {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding: 17px 0;
+        border-bottom: 1px solid rgba(7, 31, 43, 0.1);
+
+        span {
+          font-family: var(--font-family);
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 125%;
+          color: #212121;
+        }
+      }
+    }
+  }
+
+  .phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+
+    .name {
+      display: flex;
+      gap: 8px;
+
+      .title {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        color: rgba(33, 33, 33, 0.6);
+      }
+
+      a {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: rgba(33, 33, 33, 0.5);
+
+        span {
+          color: #212121;
+        }
+      }
+    }
+  }
+
+  .near {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .near--list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
+
+.navigations {
+  display: flex;
+  gap: 8px;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; // Скрываем скроллбар для Firefox
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none; // Скрываем скроллбар для Chrome, Safari и Opera
+  }
+
+  a {
+    flex: 0 0 auto;
+    object-fit: cover;
+    scroll-snap-align: start;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    color: #071f2b;
+
+    border-radius: 16px;
+    padding: 12px 16px;
+
+    background: #fff;
+
+    border: 1px solid rgba(7, 31, 43, 0.2);
+
+    &.active {
+      background: #071f2b;
+      color: #fff;
+      border: 1px solid #071f2b;
+    }
+
+
+  }
+
+
+}
+
+  .btn-wrapper--restaurant {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #fff;
+    padding: 20px 16px;
+    border-radius: 10px 10px 0 0;
+  }

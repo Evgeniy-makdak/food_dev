@@ -1,0 +1,185 @@
+// SCSS Variables
+$border-color: #000000;
+$border-radius: 16px;
+$text-color-default: rgba(50, 19, 8, 0.8); // #321308CC
+$text-color-red: #B71919;
+$gap-size: 8px;
+$padding-vertical: 12px;
+
+.b-page-order-status {
+  display: flex;
+  justify-content: space-between;
+  gap: $gap-size;
+}
+
+.b-page-order-status-item {
+  width: calc(100% / 3 - #{$gap-size - 2px});
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $padding-vertical 0;
+  flex-direction: column;
+  transition: all 0.3s ease;
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: $text-color-default;
+    margin: 0;
+  }
+
+  // Red variant modifier
+  &--red {
+    p {
+      color: $text-color-red;
+    }
+  }
+
+  // Hover effect
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background-color: rgba(108, 69, 43, 0.05);
+  }
+
+  // Active effect
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Стили для модальных окон
+.date-modal,
+.time-modal,
+.persons-modal {
+  .modal-content {
+    max-width: 400px;
+    width: 90%;
+  }
+
+  input[type="date"],
+  input[type="time"] {
+    &:focus {
+      outline: none;
+      border-color: #6C452B;
+      box-shadow: 0 0 0 2px rgba(108, 69, 43, 0.2);
+    }
+  }
+
+  button {
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Специальные стили для списка времени
+.time-modal {
+  .modal-content {
+    max-width: 500px !important;
+    width: 95% !important;
+  }
+
+  .time-categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+
+    // Стили для скроллбара
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #6C452B;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #5a3a2a;
+    }
+  }
+
+  .time-category-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .time-category {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .category-title {
+    background: #6C452B;
+    color: white;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .category-times {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .time-slot {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    text-align: center;
+    background: white;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: #f5f5f5 !important;
+    }
+
+    &.selected {
+      background-color: #6C452B !important;
+      color: #fff !important;
+      font-weight: 600;
+    }
+  }
+
+  // Адаптивность для мобильных устройств
+  @media (max-width: 480px) {
+    .time-categories-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .modal-content {
+      max-width: 95% !important;
+    }
+  }
+}

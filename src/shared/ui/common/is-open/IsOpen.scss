@@ -1,0 +1,25 @@
+        .is_open {
+          display: flex;
+          border-radius: 16px;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.96);
+          gap: 4px;
+
+          .circle {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #03874D;
+          }
+          .closed{
+            background-color: #B71919;
+          }
+
+          span {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 129%;
+            color: #212121;
+          }
+        }

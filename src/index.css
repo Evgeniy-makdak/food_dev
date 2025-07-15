@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('../fonts/SF-Pro-Display-Regular.otf') format('truetype');
+  font-weight: var(--font-weight-regular);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('./assets/fonts/SF-Pro-Display-Medium.otf') format('truetype');
+  font-weight: var(--font-weight-medium);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('./assets/fonts/fonts/SF-Pro-Display-Semibold.otf') format('truetype');
+  font-weight: var(--font-weight-semibold);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('truetype');
+  font-weight: var(--font-weight-bold);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('./assets/fonts/SF-Pro-Display-Light.otf') format('truetype');
+  font-weight: var(--font-weight-light);
+  font-style: normal;
+}
+
+
+:root {
+  /* === ЦВЕТА === */
+  --color-primary: #6C452B;
+  --color-primary-light: #6C452B33;
+  --color-primary-dark: #301207;
+  --color-primary-alpha: #30120733;
+  --color-primary-alpha-light: #30120747;
+  --color-primary-alpha-medium: #30120766;
+  --color-primary-alpha-dark: #3012071F;
+  --color-primary-alpha-darker: #3012070F;
+
+  --color-secondary: #B56C27;
+  --color-secondary-alpha: #B56C2733;
+  --color-secondary-alpha-medium: #B56C274D;
+
+  --color-accent: #CEDD40;
+  --color-accent-green: #00924733;
+  --color-error: #B71919;
+  --color-error-alpha: #B7191933;
+
+  --z-index--1000: 1000;
+  --z-index--500: 500;
+  --z-index--100: 100;
+  --z-index--50: 50;
+  --z-index--10: 10;
+  --z-index--1: 1;
+  --z-index--0: 0;
+
+  /* === ШРИФТЫ === */
+  --font-family: "SF Pro Display", sans-serif;
+  --second-family: "SF Pro", sans-serif;
+  --third-family: "Inter", sans-serif;
+
+}

@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem; */
+  /* text-align: center; */
+  height: 100dvh;
+
+  font-family: var(--font-family);
+
+}
+
+section {
+  padding: 0 16px;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.booking--page,
+.menu--page {
+  padding-bottom: 124px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.food--page {}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.rotete-270 {
+  transform: rotate(270deg);
+}
+
+.rotete-180 {
+  transform: rotate(180deg);
+}
+
+.rotete-90 {
+  transform: rotate(90deg);
+}
+
+.b-page--mt32 {
+  margin-top: 32px;
+}
+
+.b-page-box__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #321308;
+}
+
+.b-page-box__btn {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #6C452B;
+}
+
+.b-page--mt48 {
+  margin-top: 48px;
+}
+
+.b-page-slider--gap14 {
+  gap: 14px;
+}
+
+.btn--default {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.b-page--mt12 {
+  margin-top: 12px;
+}
+
+.b-page--mt20 {
+  margin-top: 20px;
+}
+
+.b-page--mt24 {
+  margin-top: 24px;
+}
+
+.b-page--mt40 {
+  margin-top: 40px;
+}
+
+.b-page--mt32 {
+  margin-top: 32px;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.dish-slider--small112 {
+  width: calc(35% - 6px);
+  flex-shrink: 0;
+}
+
+.b-page-box-flex-wrap--gap4 {
+  gap: 4px;
+}
+
+.b-page-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #301207CC;
+}
+
+.b-page-box--shaded {
+  background: #F5F5F5;
+  border: none;
+}
+
+.b-page-subtext {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #321308;
+}
+
+.b-page-box__subtittle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.b-page-box__subtittle--opacity80 {
+  color: #000000CC;
+}
+
+.b-page-subtext {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #321308;
+}
+
+.b-page--mt16 {
+  margin-top: 16px;
+}
+
+
+.w-100 {
+  width: 100% !important;
+}
+
+b-page--mt8 {
+  margin-top: 8px;
+}
+
+.pl-16 {
+  padding-left: 16px;
+}
+
+.bg__icon {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(7, 31, 43, 0.2);
+  border-radius: 12px;
+  padding: 8px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon--accardion {
+  border-radius: 16px;
+  width: 44px;
+  height: 44px;
+
+  background: rgba(219, 55, 2, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input--search{
+  width: 100%;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}

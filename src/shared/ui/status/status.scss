@@ -1,0 +1,48 @@
+.b-page-box-marker {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  // Желтый статус - Ожидает
+  &--yellow {
+    background-color: #FFF3CD;
+    color: #856404;
+    border: 1px solid #FFEAA7;
+  }
+
+  // Красный статус - Отменен
+  &--red {
+    background-color: #F8D7DA;
+    color: #721C24;
+    border: 1px solid #F5C6CB;
+
+    // Для красного статуса делаем фон более насыщенным
+    background-color: #DC3545;
+    color: #fff;
+  }
+
+  // Зеленый статус - Завершен
+  &--green {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+
+    // Для зеленого статуса делаем фон более насыщенным
+    background-color: #28A745;
+    color: #fff;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}

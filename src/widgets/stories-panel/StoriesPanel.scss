@@ -1,0 +1,51 @@
+.stories {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; // Для плавного скролла на iOS
+
+  &::-webkit-scrollbar {
+    display: none; // Скрываем стандартный скроллбар
+  }
+
+  -ms-overflow-style: none; // Для IE и Edge
+  scrollbar-width: none; // Для Firefox
+
+  &--wrapper {
+    display: flex;
+    padding: 10px 0;
+    gap: 10px; // Расстояние между историями
+  }
+
+  &--story {
+    flex: 0 0 auto; // Предотвращает сжатие элементов
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s ease-in-out;
+
+    border: 1.20px solid #db3702;
+    border-radius: 16px;
+    width: 115px;
+    height: 110px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+
+
+
+    &-text {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 133%;
+      text-align: center;
+      color: #212121;
+      border-radius: 8px 0 0 0;
+      padding: 4px 12px;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.72);
+    }
+  }
+}

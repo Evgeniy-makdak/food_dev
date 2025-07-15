@@ -1,0 +1,33 @@
+.wrapper-status-order {
+  padding: 0 16px;
+}
+
+.show-menu {
+  border: 1px solid rgba(48, 18, 7, 0.28);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: start;
+
+  .header {
+    h5 {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 133%;
+      color: #071f2b;
+    }
+  }
+
+  .info {
+    p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: rgba(7, 31, 43, 0.9);
+    }
+  }
+}

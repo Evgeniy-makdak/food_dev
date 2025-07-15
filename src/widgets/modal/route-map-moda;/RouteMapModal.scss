@@ -1,0 +1,69 @@
+.route_map {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 45px;
+  .line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    .line{
+      width: 40px;
+      height: 2px;
+      border-radius: 2px;
+      background: #404040;
+      margin-right: 16px;
+    }
+  }
+  .links_map {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon {
+          border: 1px solid rgba(7, 31, 43, 0.2);
+          border-radius: 16px;
+          padding: 8px;
+          width: 40px;
+          height: 40px;
+
+          box-shadow: 0 8px 16px 0 rgba(48, 18, 7, 0.12);
+          background: #fff;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .gis{
+          svg{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+          }
+        }
+
+        span {
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 125%;
+          color: #212121;
+        }
+      }
+
+    }
+  }
+
+}

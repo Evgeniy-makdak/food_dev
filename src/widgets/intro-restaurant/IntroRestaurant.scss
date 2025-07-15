@@ -1,0 +1,119 @@
+.intro--image {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 16px;
+
+  .img {
+    padding: 16px;
+    width: 100%;
+    // justify-self: 236px;
+    height: 236px;
+    // background-image: url('https://example.com/image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    box-shadow: 0px 8px 16px 0px rgba(48, 18, 7, 0.1215686275);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .average {
+        border-radius: 16px;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.96);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 133%;
+        color: #212121;
+      }
+
+      .active {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+
+    .footer {
+      align-self: flex-end;
+
+      a {
+        display: flex;
+        align-items: center;
+        border-radius: 16px;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.96);
+
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: #212121;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 140%;
+      color: #212121;
+    }
+
+    .subtitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .category {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: rgba(33, 33, 33, 0.8);
+      }
+
+      .restaurant-rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .rating--info {
+          display: flex;
+          align-items: center;
+          gap: 3px;
+        }
+      }
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .position {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+    }
+  }
+}

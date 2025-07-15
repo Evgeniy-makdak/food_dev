@@ -1,0 +1,94 @@
+// Стили для модального окна отмены
+.cancel-order-modal {
+  .modal-content {
+    max-width: 450px;
+    width: 90%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
+
+.cause {
+  .cause__tittle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #301207;
+  }
+
+  .b-page-box__cause-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #301207;
+  }
+
+  .b-page-box-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .b-page-radio {
+    display: flex;
+    align-items: center;
+
+    input[type="radio"] {
+      margin: 0;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .cause-bottom {
+    button {
+      transition: all 0.2s ease;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      &:active:not(:disabled) {
+        transform: translateY(0);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 480px) {
+  .cancel-order-modal {
+    .modal-content {
+      width: 95%;
+      margin: 20px auto;
+    }
+  }
+
+  .cause {
+    .cause__tittle {
+      font-size: 20px;
+    }
+
+    .b-page-box__cause-text {
+      font-size: 16px;
+    }
+
+    .cause-bottom {
+      flex-direction: column;
+      gap: 8px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

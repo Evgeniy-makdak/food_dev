@@ -1,0 +1,31 @@
+  .search-panel--wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 16px;
+    padding: 18px 16px;
+    box-shadow: 0 8px 16px 0 rgba(7, 31, 43, 0.12);
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+
+      input[type="text"] {
+        // width: 100%;
+        max-width: 550px;
+        width: 100%;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+
+        &::placeholder {
+          color: rgba(33, 33, 33, 0.5);
+        }
+      }
+    }
+  }

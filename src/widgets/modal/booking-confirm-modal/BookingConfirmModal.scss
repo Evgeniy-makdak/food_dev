@@ -1,0 +1,128 @@
+.booking-confirm {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 160px;
+  padding-top: 40px;
+
+  .note {
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .header {
+      .title {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 133%;
+        color: #071f2b;
+      }
+
+      .time {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-bottom: 12px;
+
+        border-bottom: 1px solid rgba(7, 31, 43, 0.2);
+
+        p {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 143%;
+          color: rgba(7, 31, 43, 0.8);
+        }
+      }
+    }
+
+    .info {
+      p {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: rgba(7, 31, 43, 0.9);
+      }
+    }
+  }
+
+  .input-field {
+    border: 1px solid rgba(48, 18, 7, 0.28);
+    border-radius: 20px;
+    padding: 16px 12px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+
+    }
+  }
+
+  .comment {
+    border: 1px solid rgba(48, 18, 7, 0.28);
+    border-radius: 16px;
+    padding: 16px 12px;
+
+    .header {
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(7, 31, 43, 0.2);
+
+      h5 {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 133%;
+        color: #321308;
+      }
+    }
+
+    .input-comment {
+      padding-top: 8px;
+
+      form {
+        textarea {
+          width: 100%;
+          border-radius: 12px;
+          background-color: #f4f4f4;
+          border: 0;
+          outline: 0;
+
+
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+          color: #212121;
+        }
+      }
+    }
+  }
+}
+
+.btn-comfirm--wrapper {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #fff;
+  padding: 20px 16px;
+  border-radius: 10px 10px 0 0;
+  
+  button:disabled{
+    background-color: #cccccc !important;
+    cursor: not-allowed !important;
+    border: 1px solid #cccccc !important;
+  }
+}

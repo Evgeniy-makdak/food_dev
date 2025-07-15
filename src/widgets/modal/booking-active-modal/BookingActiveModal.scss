@@ -1,0 +1,212 @@
+.booking--active {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 170px;
+  .hall {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-item {
+      border-radius: 16px;
+      padding: 12px 16px;
+      max-width: 115px;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(7, 31, 43, 0.2);
+
+      &.active {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 133%;
+        color: #fff;
+        background: #071f2b;
+      }
+    }
+  }
+
+
+
+  .guests {
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 20px;
+    padding: 16px 0px;
+
+    .header {
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(7, 31, 43, 0.1);
+
+
+      p {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        color: #212121;
+      }
+    }
+
+    .guest-number-list {
+
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; // Скрываем скроллбар для Firefox
+      -ms-overflow-style: none;
+      padding: 32px 16px 16px;
+
+      .guest-number {
+        flex: 0 0 auto;
+        border: 1px solid rgba(7, 31, 43, 0.2);
+        border-radius: 16px;
+        padding: 20px 8px;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background: #db3702;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .date--container {
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 20px;
+    padding: 16px 0px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(7, 31, 43, 0.1);
+
+      p {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        color: #212121;
+      }
+    }
+
+    .date--list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; // Скрываем скроллбар для Firefox
+      -ms-overflow-style: none;
+      padding: 32px 16px 16px;
+
+      .date--item {
+        flex: 0 0 auto;
+        border: 1px solid rgba(7, 31, 43, 0.2);
+        border-radius: 16px;
+        padding: 20px 8px;
+        width: 86px;
+        height: 88px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background: #db3702;
+          color: #fff;
+          border: #db3702;
+        }
+
+        p {}
+      }
+    }
+
+
+  }
+
+  .time--container {
+    border: 1px solid rgba(7, 31, 43, 0.2);
+    border-radius: 20px;
+    padding: 16px 0px;
+
+    .header {
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(7, 31, 43, 0.1);
+
+      p {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        color: #212121;
+      }
+    }
+
+    .time--list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; // Скрываем скроллбар для Firefox
+      -ms-overflow-style: none;
+      padding: 32px 16px 16px;
+
+      .time--item {
+        flex: 0 0 auto;
+        border: 1px solid rgba(7, 31, 43, 0.2);
+        border-radius: 16px;
+        padding: 20px 8px;
+        width: 86px;
+        height: 64px;
+        border: 1px solid rgba(7, 31, 43, 0.2);
+        border-radius: 16px;
+        padding: 20px 8px;
+        width: 86px;
+        height: 64px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background: #db3702;
+          border: 1px solid #db3702;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
+
+.btn-wrapper--booking {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #fff;
+    padding: 20px 16px;
+    border-radius: 10px 10px 0 0;
+}

@@ -1,0 +1,30 @@
+.b-page-slider-item {
+  width: 90px;
+  height: 96px;
+  position: relative;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.b-page-slider-item p {
+  position: absolute;
+  height: 24px;
+  border-radius: 100px;
+  right: -5px;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  background: #6C452B;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.b-page-slider-item-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}

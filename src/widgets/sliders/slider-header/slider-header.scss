@@ -1,0 +1,71 @@
+// SCSS Variables
+$primary-color: #071f2b;
+$border-color: rgba(48, 18, 7, 0.2); // #30120733
+$white: #fff;
+$transparent: transparent;
+
+// Default values
+$default-gap: 8px;
+$default-padding: 16px;
+$item-padding-vertical: 12px;
+$item-padding-horizontal: 16px;
+$border-radius: 16px;
+
+.b-page-slider {
+  width: auto;
+  overflow-x: auto;
+  display: flex;
+  gap: $default-gap;
+  // padding-left: $default-padding;
+  // padding-right: $default-padding;
+
+  // Прозрачный скролл
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE и Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Opera
+  }
+
+  // Модификаторы
+  &--bias {
+    padding-left: 0;
+  }
+
+  &--gap14 {
+    gap: 14px;
+  }
+
+
+
+
+
+  // Элементы слайдера
+  &__item {
+    padding: $item-padding-vertical $item-padding-horizontal;
+    color: $primary-color;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background-color: $transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0; // Предотвращает сжатие элементов
+
+    // Активное состояние
+    &--active {
+      color: $white;
+      background: $primary-color;
+      border-color: $primary-color;
+    }
+
+    // Hover эффект для неактивных элементов
+    // &:not(&--active):hover {
+    //   background-color: rgba($primary-color, 0.1);
+    //   transform: translateY(-1px);
+    // }
+  }
+}

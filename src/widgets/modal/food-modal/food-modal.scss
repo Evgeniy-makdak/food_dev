@@ -1,0 +1,44 @@
+.food-modal {
+  
+  .food-modal__content {
+    padding: 0;
+    position: relative;
+  }
+
+  // Убираем отступы для полноэкранного отображения
+  .header--shadow {
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  // Добавляем отступы для контента
+  .b-page-box,
+  .b-page--mt32,
+  .b-page--mt40 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  // Стили для кнопки добавления в корзину
+  .b-bottom {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid #f0f0f0;
+    padding: 16px;
+    margin: 0;
+    
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .food-modal {
+    .food-modal__content {
+      padding-bottom: 0;
+    }
+  }
+}

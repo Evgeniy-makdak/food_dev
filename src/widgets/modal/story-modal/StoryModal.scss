@@ -1,0 +1,139 @@
+.stories-container {
+  height: 100dvh;
+  width: 100%;
+  position: relative;
+
+  .swiper-pagination {
+    bottom: 20px !important;
+
+    .swiper-pagination-bullet {
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .story-swiper {
+    height: 100%;
+  }
+
+  .story-slide {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // padding: 20px;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(4px);
+      background: rgba(33, 33, 33, 0.02);
+      padding: 44px 16px 16px;
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon-intro-logo {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        h5 {
+          font-family: var(--font-family);
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 125%;
+          text-align: center;
+          color: #fff;
+        }
+      }
+
+
+      button {
+        border: 1px solid rgba(7, 31, 43, 0.2);
+        border-radius: 16px;
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 8px 16px 0 rgba(48, 18, 7, 0.12);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .story-text {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .story-progress {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+
+    .progress-bar {
+      flex-grow: 1;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+      overflow: hidden;
+
+      .progress-fill {
+        height: 100%;
+        background-color: white;
+        width: 0;
+        transition: width 0.1s linear;
+      }
+    }
+  }
+
+  // Убираем стрелки навигации
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  // Убираем пагинацию Swiper, так как мы используем свою
+  .swiper-pagination {
+    display: none;
+  }
+}
+
+.story-modal {
+  max-height: 100dvh;
+  border-radius: 0 0 0 0;
+}
