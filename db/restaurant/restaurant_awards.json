@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Премия “Мишлен”",
+    "year": 2025,
+    "img": "/img/restaurants/awards/branch.png"
+  },
+  {
+    "id": 2,
+    "name": "Премия “Пальма”",
+    "year": 2022,
+    "img": "/img/restaurants/awards/michlen.png"
+  }
+]

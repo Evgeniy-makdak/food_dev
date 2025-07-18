@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Парковка у ресторана",
+    "title": "parking"
+
+  },
+  {
+    "id": 2,
+    "name": "Панорамный вид",
+    "title": "panoramic"
+
+  },
+  {
+    "id": 3,
+    "name": "Заведение у воды",
+    "title": "swimming"
+
+  },
+  {
+    "id": 4,
+    "name": "Скидки именинникам",
+    "title": "discounted-for-birthday"
+
+  },
+  {
+    "id": 5,
+    "name": "Кабинки",
+    "title": "cabins"
+  },
+  {
+    "id": 6,
+    "name": "Барная",
+    "title": "bar"
+
+  },
+  {
+    "id": 7,
+    "name": "Круглосуточно",
+    "title": "all-day"
+  },
+  {
+    "id": 8,
+    "name": "Завтраки",
+    "title": "breakfast"
+  },
+  {
+    "id": 9,
+    "name": "Бизнес-ланч",
+    "title": "business-lunch"
+  },
+  {
+    "id": 10,
+    "name": "Детская комната",
+    "title": "child-friendly"
+  },
+  {
+    "id": 11,
+    "name": "Детская комната с няней",
+    "title": "child-friendly-with-waiter"
+  },
+  {
+    "id": 12,
+    "name": "Детское меню",
+    "title": "child-friendly-menu"
+  },
+  {
+    "id": 13,
+    "name": "Живая музыка",
+    "title": "live-music"
+  },
+  {
+    "id": 14,
+    "name": "Танцпол",
+    "title": "dance-floor"
+  },
+  {
+    "id": 15,
+    "name": "Караоке",
+    "title": "karaoke"
+  },
+  {
+    "id": 16,
+    "name": "Кальян",
+    "title": "kids-club"
+  },
+  {
+    "id": 17,
+    "name": "Летняя веранда",
+    "title": "summer-lounge"
+  },
+  {
+    "id": 18,
+    "name": "ЗОЖ-меню",
+    "title": "zal-menu"
+  },
+  {
+    "id": 19,
+    "name": "Выпечка",
+    "title": "food-menu"
+  },
+  {
+    "id": 20,
+    "name": "Меню без мяса",
+    "title": "vegan-menu"
+  },
+  {
+    "id": 21,
+    "name": "Устричный бар",
+    "title": "pet-friendly-bar"
+  },
+  {
+    "id": 22,
+    "name": "Разрешено с животными",
+    "title": "pet-friendly"
+  },
+  {
+    "id": 23,
+    "name": "Рекомендации блогеров",
+    "title": "bloggers-recommendations"
+  },
+  {
+    "id": 24,
+    "name": "Можно со своим алкоголем",
+    "title": "alcohol-free"
+  },
+  {
+    "id": 25,
+    "name": "Скидки и акции",
+    "title": "discount-and-actions"
+  },
+  {
+    "id": 26,
+    "name": "Заведения рядом со мной",
+    "title": "nearby-restaurants"
+  },
+  {
+    "id": 27,
+    "name": "Известные рестораны",
+    "title": "well-known-restaurants"
+  },
+  {
+    "id": 28,
+    "name": "Недавно открывшиеся",
+    "title": "recently-opened"
+  },
+  {
+    "id": 29,
+    "name": "Бесплатный Wi-Fi",
+    "title": "free-wifi"
+  }
+]

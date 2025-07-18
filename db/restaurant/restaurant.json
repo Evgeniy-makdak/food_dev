@@ -1,0 +1,524 @@
+[
+  {
+    "id": 1,
+    "name": "Love You",
+    "category": "Ресторан",
+    "category_eat": "Кавказская кухня",
+    "working_time": {
+      "open_time": "11:00",
+      "close_time": "23:00",
+      "saturday": false,
+      "sunday": false
+    },
+    "rating": {
+      "total": 4.95,
+      "ya": 4.8,
+      "gis": 4.75
+
+    },
+    "average_price": 450,
+    "map_position": {
+      "l": "100px",
+      "t": "120px"
+    },
+    "title_eats": [
+      "Стейк",
+      "Бургеры",
+      "Шашлык"
+    ],
+    "metro_station": [
+      "Арбат",
+      "Парк Победы",
+      "Бауманская"
+    ],
+    "description": "You Love — уютное место для тех, кто ценит атмосферу тепла и романтики. Здесь каждый гость ощущает себя особенным. Это ресторан, расположенный в сердце столицы, идеально подходящий для романтических встреч, дружеских посиделок, или приятного отдыха в кругу семьи.",
+    "address": "ул. Арбат, д. 54/2",
+    "coords" :{
+      "lat": 55.753215,
+      "lng": 37.622504
+    },
+    "phone_number": "+7 (999) 123-45-67",
+    "menu": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "pecial_offers": [
+      1,
+      3,
+      5,
+      6,
+      2,
+      8,
+      9
+    ],
+    "awards": [
+      1,
+      2
+    ],
+    "reviews": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "images": [
+      "https://example.com/image1.jpg",
+      "https://example.com/image2.jpg",
+      "https://example.com/image3.jpg"
+    ],
+    "nearby_places": [
+      2,
+      3,
+      5,
+      6,
+      8,
+      9
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Грузинский дворик",
+    "category": "Ресторан",
+    "category_eat": "Грузинская кухня",
+    "working_time": {
+      "open_time": "10:00",
+      "close_time": "22:00",
+      "saturday": true,
+      "sunday": true
+    },
+    "rating": {
+      "total": 4.8,
+      "ya": 4.7,
+      "gis": 4.6
+    },
+    "average_price": 500,
+    "map_position": {
+      "l": "150px",
+      "t": "200px"
+    },
+    "coords": {
+      "lat": 55.752215,
+      "lng": 37.624504
+    },
+    "title_eats": [
+      "Хачапури",
+      "Хинкали",
+      "Шашлык"
+    ],
+    "metro_station": [
+      "Тверская",
+      "Чеховская"
+    ],
+    "description": "Аутентичная грузинская кухня в центре Москвы. Уютная атмосфера и гостеприимство.",
+    "address": "ул. Тверская, д. 15",
+    "phone_number": "+7 (495) 123-45-67",
+    "menu": [2, 4, 6],
+    "pecial_offers": [2, 4, 6, 8, 10],
+    "awards": [1],
+    "reviews": [1, 5, 9],
+    "images": [
+      "https://example.com/image4.jpg",
+      "https://example.com/image5.jpg"
+    ],
+    "nearby_places": [1, 3, 7]
+  },
+  {
+    "id": 3,
+    "name": "Burger King",
+    "category": "Фастфуд",
+    "category_eat": "Американская кухня",
+    "working_time": {
+      "open_time": "08:00",
+      "close_time": "23:00",
+      "saturday": true,
+      "sunday": true
+    },
+    "rating": {
+      "total": 4.3,
+      "ya": 4.2,
+      "gis": 4.1
+    },
+    "average_price": 300,
+    "map_position": {
+      "l": "200px",
+      "t": "250px"
+    },
+    "coords":{
+      "lat": 55.751215,
+      "lng": 37.623504
+    },
+    "title_eats": [
+      "Воппер",
+      "Чизбургер",
+      "Картофель фри"
+    ],
+    "metro_station": ["Курская", "Чкаловская"],
+    "description": "Классический американский фастфуд с сочными бургерами.",
+    "address": "ул. Земляной Вал, д. 10",
+    "phone_number": "+7 (495) 987-65-43",
+    "menu": [7, 8, 9],
+    "pecial_offers": [1, 3, 5, 7, 9, 11, 13, 15],
+    "awards": [],
+    "reviews": [2, 4, 6, 8, 10],
+    "images": [
+      "https://example.com/image6.jpg",
+      "https://example.com/image7.jpg"
+    ],
+    "nearby_places": [2, 4, 5]
+  },
+  {
+    "id": 4,
+    "name": "Суши Wok",
+    "category": "Ресторан",
+    "category_eat": "Японская кухня",
+    "working_time": {
+      "open_time": "12:00",
+      "close_time": "00:00",
+      "saturday": true,
+      "sunday": false
+    },
+    "rating": {
+      "total": 4.6,
+      "ya": 4.5,
+      "gis": 4.4
+    },
+    "average_price": 600,
+    "map_position": {
+      "l": "150px",
+      "t": "420px"
+    },
+    "coords":{
+      "lat": 55.750215,
+      "lng": 37.625504
+    },
+    "title_eats": [
+      "Роллы",
+      "Суши",
+      "Лапша"
+    ],
+    "metro_station": ["Китай-город", "Лубянка"],
+    "description": "Свежие суши и роллы с доставкой и в зале.",
+    "address": "ул. Маросейка, д. 8",
+    "phone_number": "+7 (495) 111-22-33",
+    "menu": [10, 11, 12],
+    "pecial_offers": [4, 8, 12, 16, 20, 24, 28],
+    "awards": [2],
+    "reviews": [3, 6, 9],
+    "images": [
+      "https://example.com/image8.jpg",
+      "https://example.com/image9.jpg"
+    ],
+    "nearby_places": [1, 5, 6]
+  },
+  {
+    "id": 5,
+    "name": "Пивная Бочка",
+    "category": "Бар",
+    "category_eat": "Европейская кухня",
+    "working_time": {
+      "open_time": "14:00",
+      "close_time": "02:00",
+      "saturday": true,
+      "sunday": true
+    },
+    "rating": {
+      "total": 4.4,
+      "ya": 4.3,
+      "gis": 4.2
+    },
+    "average_price": 400,
+    "map_position": {
+      "l": "200px",
+      "t": "179px"
+    },
+    "coords":{
+      "lat": 55.749215,
+      "lng": 37.626504
+    },
+    "title_eats": [
+      "Крылья",
+      "Бургеры",
+      "Картофельные дольки"
+    ],
+    "metro_station": ["Таганская", "Марксистская"],
+    "description": "Уютный бар с крафтовым пивом и закусками.",
+    "address": "ул. Нижняя Радищевская, д. 12",
+    "phone_number": "+7 (495) 555-66-77",
+    "menu": [13, 14, 15],
+    "pecial_offers": [5, 10, 15, 20, 25],
+    "awards": [],
+    "reviews": [4, 8],
+    "images": [
+      "https://example.com/image10.jpg",
+      "https://example.com/image11.jpg"
+    ],
+    "nearby_places": [2, 3, 7]
+  },
+  {
+    "id": 6,
+    "name": "Кофейня у озера",
+    "category": "Кафе",
+    "category_eat": "Десерты",
+    "working_time": {
+      "open_time": "08:00",
+      "close_time": "21:00",
+      "saturday": true,
+      "sunday": true
+    },
+    "rating": {
+      "total": 4.9,
+      "ya": 4.8,
+      "gis": 4.85
+    },
+    "average_price": 350,
+    "map_position": {
+      "l": "250px",
+      "t": "90px"
+    },
+    "coords":{
+      "lat": 55.752215,
+      "lng": 37.627504
+    },
+    "title_eats": [
+      "Тирамису",
+      "Капкейки",
+      "Латте"
+    ],
+    "metro_station": ["Новогиреево"],
+    "description": "Уютная кофейня с видом на озеро и вкусными десертами.",
+    "address": "ул. Зеленая, д. 5",
+    "phone_number": "+7 (495) 777-88-99",
+    "menu": [16, 17, 18],
+    "pecial_offers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "awards": [1, 2],
+    "reviews": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "images": [
+      "https://example.com/image12.jpg",
+      "https://example.com/image13.jpg"
+    ],
+    "nearby_places": [4, 8]
+  },
+  {
+    "id": 7,
+    "name": "Мясо & Вино",
+    "category": "Ресторан",
+    "category_eat": "Стейк-хаус",
+    "working_time": {
+      "open_time": "12:00",
+      "close_time": "00:00",
+      "saturday": true,
+      "sunday": false
+    },
+    "rating": {
+      "total": 4.7,
+      "ya": 4.6,
+      "gis": 4.65
+    },
+    "average_price": 1200,
+    "map_position": {
+      "l": "100px",
+      "t": "300px"
+    },
+    "coords":{
+      "lat": 55.751215,
+      "lng": 37.628504
+    },
+    "title_eats": [
+      "Рибей",
+      "Томагавк",
+      "Вино"
+    ],
+    "metro_station": ["Белорусская", "Маяковская"],
+    "description": "Премиальный стейк-хаус с отборным мясом и винной картой.",
+    "address": "ул. Тверская-Ямская, д. 20",
+    "phone_number": "+7 (495) 222-33-44",
+    "menu": [19, 20, 10],
+    "pecial_offers": [7, 14, 21, 28],
+    "awards": [1],
+    "reviews": [5, 10],
+    "images": [
+      "https://example.com/image14.jpg",
+      "https://example.com/image15.jpg"
+    ],
+    "nearby_places": [3, 5, 9]
+  },
+  {
+    "id": 8,
+    "name": "Пельменная №1",
+    "category": "Кафе",
+    "category_eat": "Русская кухня",
+    "working_time": {
+      "open_time": "09:00",
+      "close_time": "21:00",
+      "saturday": false,
+      "sunday": false
+    },
+    "rating": {
+      "total": 4.2,
+      "ya": 4.1,
+      "gis": 4.0
+    },
+    "average_price": 250,
+    "map_position": {
+      "l": "300px",
+      "t": "200px"
+    },
+    "coords":{
+      "lat": 55.750215,
+      "lng": 37.629504
+    },
+    "title_eats": [
+      "Пельмени",
+      "Борщ",
+      "Оливье"
+    ],
+    "metro_station": ["Кузнецкий мост", "Лубянка"],
+    "description": "Классическая русская кухня в центре Москвы.",
+    "address": "ул. Рождественка, д. 7",
+    "phone_number": "+7 (495) 333-44-55",
+    "menu": [11, 12, 4],
+    "pecial_offers": [3, 6, 9, 12, 15, 18, 21, 24, 27],
+    "awards": [],
+    "reviews": [2, 4, 6, 8],
+    "images": [
+      "https://example.com/image16.jpg",
+      "https://example.com/image17.jpg"
+    ],
+    "nearby_places": [1, 6]
+  },
+  {
+    "id": 9,
+    "name": "Итальянский дворик",
+    "category": "Ресторан",
+    "category_eat": "Итальянская кухня",
+    "working_time": {
+      "open_time": "11:00",
+      "close_time": "23:00",
+      "saturday": true,
+      "sunday": true
+    },
+    "rating": {
+      "total": 4.85,
+      "ya": 4.75,
+      "gis": 4.8
+    },
+    "average_price": 700,
+    "map_position": {
+      "l": "334px",
+      "t": "135px"
+    },
+    "coords":{
+      "lat": 55.753215,
+      "lng": 37.626504
+    },
+    "title_eats": [
+      "Паста",
+      "Пицца",
+      "Тирамису"
+    ],
+    "metro_station": ["Смоленская", "Кропоткинская"],
+    "description": "Аутентичная итальянская кухня в уютной атмосфере.",
+    "address": "ул. Арбат, д. 25",
+    "phone_number": "+7 (495) 444-55-66",
+    "menu": [2, 15, 4],
+    "pecial_offers": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28],
+    "awards": [1, 2],
+    "reviews": [7],
+    "images": [
+      "https://example.com/image18.jpg",
+      "https://example.com/image19.jpg"
+    ],
+    "nearby_places": [2, 4, 7]
+  },
+  {
+    "id": 10,
+    "name": "Шаурма №1",
+    "category": "Фастфуд",
+    "category_eat": "Уличная еда",
+    "working_time": {
+      "open_time": "10:00",
+      "close_time": "22:00",
+      "saturday": true,
+      "sunday": true
+    },
+    "rating": {
+      "total": 4.0,
+      "ya": 3.9,
+      "gis": 3.8
+    },
+    "average_price": 200,
+    "map_position": {
+      "l": "245px",
+      "t": "280px"
+    },
+    "coords":{
+      "lat": "37.63862",
+      "lng": "55.765446"
+    },
+    "title_eats": [
+      "Шаурма",
+      "Фалафель",
+      "Хот-дог"
+    ],
+    "metro_station": ["Чистые пруды", "Тургеневская"],
+    "description": "Вкусная шаурма по домашнему рецепту.",
+    "address": "ул. Мясницкая, д. 30",
+    "phone_number": "+7 (495) 666-77-88",
+    "menu": [9, 11, 14],
+    "pecial_offers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+    "awards": [],
+    "reviews": [1, 3, 5, 7, 9],
+    "images": [
+      "https://example.com/image20.jpg"
+    ],
+    "nearby_places": [3, 5, 8]
+  },
+  {
+    "id": 11,
+    "name": "Веганский рай",
+    "category": "Кафе",
+    "category_eat": "Веганская кухня",
+    "working_time": {
+      "open_time": "09:00",
+      "close_time": "20:00",
+      "saturday": true,
+      "sunday": false
+    },
+    "rating": {
+      "total": 4.5,
+      "ya": 4.4,
+      "gis": 4.3
+    },
+    "average_price": 400,
+    "map_position": {
+      "l": "600px",
+      "t": "650px"
+    },
+    "coords":{
+      "lat": 55.758215,
+      "lng": 37.624504
+    },
+    "title_eats": [
+      "Бургеры",
+      "Смузи",
+      "Салаты"
+    ],
+    "metro_station": ["Проспект Мира", "Сухаревская"],
+    "description": "Здоровое питание без мяса и молочных продуктов.",
+    "address": "ул. Проспект Мира, д. 40",
+    "phone_number": "+7 (495) 888-99-00",
+    "menu": [11, 4, 19],
+    "pecial_offers": [1, 5, 10, 15, 20, 25],
+    "awards": [2],
+    "reviews": [2, 4, 6, 8, 10],
+    "images": [
+      "https://example.com/image21.jpg",
+      "https://example.com/image22.jpg"
+    ],
+    "nearby_places": [4, 6, 9]
+  }
+]
