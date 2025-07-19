@@ -1,6 +1,6 @@
 import { SVG } from "../../../shared/ui";
 
-export default function OrderCustomer() {
+export default function OrderCustomer({bookingData}: any) {
   return (
     <section>
       <div className="b-page-box b-page-box--middle b-page--mt32">
@@ -14,7 +14,7 @@ export default function OrderCustomer() {
         </div>
         <div className="b-page-box-flex-wrap b-page--mt16">
           <SVG.PhoneIcon />
-          <a href="tel:89265567230" className="b-page-text b-page--ml8">+7 926 556 72 30</a>
+          <a href="tel:89265567230" className="b-page-text b-page--ml8">{bookingData?.phoneNumber}</a>
         </div>
       </div>
     </section>

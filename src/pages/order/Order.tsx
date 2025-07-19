@@ -1,10 +1,12 @@
 import { BasketComment, Header, OrderComposition, OrderCustomer, OrderMethodsPay, OrderReservation, OrderTime, OrderTotalPay, OrderItemsList, OrderButtonAction } from '../../widgets'
 import { useCart } from '../../features'
 import './order.scss'
+import { observer } from 'mobx-react-lite'
+import { BookingData } from '../../entities/booking-data/BookingData'
+// import { Restaurant } from '../../shared/types/types'
 
-export default function Order() {
+const Order = observer(() => {
   const { cart, getTotalItems, getTotalPrice } = useCart()
-
   const totalItems = getTotalItems()
   const totalPrice = getTotalPrice()
 
@@ -24,27 +26,30 @@ export default function Order() {
       </div>
     )
   }
+
   return (
-    <div className='order--page'>
-      <Header text="Оформление заказа" />
-      <OrderComposition
-        items={cart}
-        totalItems={totalItems}
-      />
-      <OrderItemsList items={cart} />
-      <BasketComment />
-      <OrderReservation />
-      <OrderTime />
-
-      <OrderCustomer />
-
-      <OrderMethodsPay />
-
-      <OrderTotalPay
-        totalPrice={totalPrice}
-      />
-
-      <OrderButtonAction />
-    </div>
+    <BookingData>
+      {(bookingData, restaurant) => (
+        <div className='order--page'>
+          <Header text="Оформление заказа" />
+          <OrderComposition
+            items={cart}
+            totalItems={totalItems}
+          />
+          <OrderItemsList items={cart} />
+          <BasketComment />
+          <OrderReservation restaurant={restaurant} />
+          <OrderTime />
+          <OrderCustomer bookingData={bookingData} />
+          <OrderMethodsPay />
+          <OrderTotalPay
+            totalPrice={totalPrice}
+          />
+          <OrderButtonAction  />
+        </div>
+      )}
+    </BookingData>
   )
-}
+})
+
+export default Order

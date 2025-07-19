@@ -1,15 +1,62 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './status-order.scss'
 import { Modal, SVG } from '../../../shared/ui';
 import { BookingUpdateProvider, useBookingUpdate } from '../../../components/BookingUpdateProvider';
 
-const StatusOrderContent = () => {
-  const {
-    selectedGuests,
-    selectedDate,
-    selectedTime,
-    onUpdate
-  } = useBookingUpdate();
+interface StatusOrderProps {
+  selectedGuests?: number | null;
+  selectedDate?: string;
+  selectedTime?: string | null;
+  onUpdate?: (field: string, value: string | number) => void;
+}
+
+const StatusOrderContent: React.FC<StatusOrderProps> = ({
+  selectedGuests: propSelectedGuests,
+  selectedDate: propSelectedDate,
+  selectedTime: propSelectedTime,
+  onUpdate
+}) => {
+  const { onUpdate: contextUpdate } = useBookingUpdate();
+  const [selectedGuests, setSelectedGuests] = useState<number | null>(null);
+  const [selectedDate, setSelectedDate] = useState<string>('');
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    const bookingData = JSON.parse(localStorage.getItem('bookingData') || '{}');
+
+    setSelectedGuests(propSelectedGuests ?? bookingData.selectedGuests ?? null);
+    setSelectedDate(propSelectedDate ?? bookingData.selectedDate ?? '');
+    setSelectedTime(propSelectedTime ?? bookingData.selectedTime ?? null);
+  }, [propSelectedGuests, propSelectedDate, propSelectedTime]);
+
+  // Используем контекстный onUpdate, если он доступен, иначе используем пропс onUpdate
+  const handleUpdate = (field: string, value: string | number) => {
+    if (contextUpdate) {
+      contextUpdate(field, value);
+    }
+    if (onUpdate) {
+
+      onUpdate(field, value);
+    }
+
+    // Обновляем локальное состояние и localStorage
+    const bookingData = JSON.parse(localStorage.getItem('bookingData') || '{}');
+    switch (field) {
+      case 'selectedGuests':
+        setSelectedGuests(value as number);
+        bookingData.selectedGuests = value;
+        break;
+      case 'selectedDate':
+        setSelectedDate(value as string);
+        bookingData.selectedDate = value;
+        break;
+      case 'selectedTime':
+        setSelectedTime(value as string);
+        bookingData.selectedTime = value;
+        break;
+    }
+    localStorage.setItem('bookingData', JSON.stringify(bookingData));
+  };
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isTimeOpen, setIsTimeOpen] = useState(false);
@@ -36,14 +83,14 @@ const StatusOrderContent = () => {
     return date.toLocaleDateString('ru-RU', options)
   }
 
-  const formatTime = (time: string) => {
+  const formatTime = (time: string | null) => {
     if (!time) return 'Выберите время'
     const hour = parseInt(time.split(':')[0])
     if (hour === 0) return `${time} (полночь)`
     return time
   }
 
-  const formatPersons = (count: number) => {
+  const formatPersons = (count: number | null) => {
     if (!count || count < 1) return 'Выберите количество гостей'
     if (count === 1) return '1 персона'
     if (count < 5) return `${count} персоны`
@@ -93,7 +140,7 @@ const StatusOrderContent = () => {
           <input
             type="date"
             value={selectedDate}
-            onChange={(e) => onUpdate('selectedDate', e.target.value)}
+            onChange={(e) => handleUpdate('selectedDate', e.target.value)}
             style={{
               width: '100%',
               padding: '12px',
@@ -123,7 +170,7 @@ const StatusOrderContent = () => {
                     <div
                       key={time}
                       onClick={() => {
-                        onUpdate('selectedTime', time)
+                        handleUpdate('selectedTime', time)
                         setIsTimeOpen(false)
                       }}
                       className={`time-slot ${selectedTime === time ? 'selected' : ''}`}
@@ -143,9 +190,9 @@ const StatusOrderContent = () => {
         <div style={{ padding: '20px' }}>
           <h3 style={{ marginBottom: '20px', textAlign: 'center' }}>Количество людей</h3>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '20px' }}>
-            <button onClick={() => onUpdate('selectedGuests', Math.max(1, selectedGuests - 1))}>-</button>
-            <span>{selectedGuests}</span>
-            <button onClick={() => onUpdate('selectedGuests', Math.min(20, selectedGuests + 1))}>+</button>
+            <button onClick={() => handleUpdate('selectedGuests', Math.max(1, (selectedGuests ?? 1) - 1))}>-</button>
+            <span>{selectedGuests ?? 1}</span>
+            <button onClick={() => handleUpdate('selectedGuests', Math.min(20, (selectedGuests ?? 1) + 1))}>+</button>
           </div>
           <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
             <button onClick={() => setIsPersonsOpen(false)}>Отмена</button>
@@ -157,10 +204,12 @@ const StatusOrderContent = () => {
   );
 };
 
-export default function StatusOrder() {
+const StatusOrder: React.FC<StatusOrderProps> = (props) => {
   return (
     <BookingUpdateProvider>
-      <StatusOrderContent />
+      <StatusOrderContent {...props} />
     </BookingUpdateProvider>
   );
-}
+};
+
+export default StatusOrder;

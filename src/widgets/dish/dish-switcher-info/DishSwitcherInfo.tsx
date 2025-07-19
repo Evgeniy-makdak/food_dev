@@ -31,7 +31,7 @@ export default function DishSwitcherInfo({ allergens, nutrition }: { allergens: 
         return (
           <div className="b-pag-tab-box b-page--mt24 js-tab-box b-pag-tab-box--active">
             <div className="dish__subtitle">На 100 г.</div>
-            <div className="b-page-box b-page--mt8">
+            <div className="b-page-box b-page--mt8 ">
               <div className="b-pag-tab-box-wrap">
 
                 {
@@ -42,25 +42,7 @@ export default function DishSwitcherInfo({ allergens, nutrition }: { allergens: 
                     </div>
                   ))
                 }
-                {/* <div className="b-pag-tab-box-wrap-elem">
-                  <p>белки</p>
-                  <span>8 г</span>
-                </div>
-                <div className="b-pag-tab-box-wrap__elem"></div>
-                <div className="b-pag-tab-box-wrap-elem">
-                  <p>жиры</p>
-                  <span>6 г</span>
-                </div>
-                <div className="b-pag-tab-box-wrap__elem"></div>
-                <div className="b-pag-tab-box-wrap-elem">
-                  <p>углеводы</p>
-                  <span>6 г</span>
-                </div>
-                <div className="b-pag-tab-box-wrap__elem"></div>
-                <div className="b-pag-tab-box-wrap-elem">
-                  <p>ккал</p>
-                  <span>120</span>
-                </div> */}
+
               </div>
             </div>
           </div>
@@ -68,10 +50,10 @@ export default function DishSwitcherInfo({ allergens, nutrition }: { allergens: 
       case 'allergens':
         return (
           <div className="b-pag-tab-box b-page--mt24 js-tab-box b-pag-tab-box--active">
-            <div className="b-page-box">
+            <div className="b-page-box allergens--wrapper">
               {
                 allergens.map((allergy, index) => (
-                  <div key={index} className="b-page-box-flex-wrap">
+                  <div key={index} className="b-page-box-flex-wrap allergens-item">
                     <div className="b-pag-tab-elem__icon">
                       <SVG.CarrotIcon />
                     </div>

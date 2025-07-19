@@ -64,7 +64,7 @@ const CurrentBooking = observer(({ bookingData }: { bookingData: BookingData }) 
         </div>
         <div className="b-page-box-flex b-page--mt16">
           <div className="b-page-box-flex-wrap">
-            <SVG.LocationIcon fill='#B56C27' />
+            <SVG.LocationIcon fill='rgb(7, 31, 43)' />
             <div className="b-page-box__subtittle b-page-box__subtittle--opacity80 b-page-box--ml6 b-page-box--mr12">г. Москва, {restaurant.address} </div>
           </div>
           <div className="b-page-box__subtittle b-page-box__subtittle--opacity80">4 км</div>

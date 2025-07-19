@@ -99,7 +99,7 @@ const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaur
               text='Отмена'
               style={{
                 color: '#fff',
-                background: '#6C452B',
+                background: 'rgb(7, 31, 43)',
                 border: 'none',
                 width: '100%',
               }}

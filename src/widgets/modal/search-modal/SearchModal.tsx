@@ -26,7 +26,7 @@ const SearchModal: React.FC<SearchModalProps> = observer(({ isOpen, onClose }) =
   const [isSearched, setIsSearched] = useState<boolean>(false);
   const [selectedDish, setSelectedDish] = useState<Dish | null>(null);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
-
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
   useEffect(() => {
     restaurantsStore.fetchRestaurants();
     restaurantsStore.fetchDish();
@@ -60,7 +60,11 @@ const SearchModal: React.FC<SearchModalProps> = observer(({ isOpen, onClose }) =
   const handleFindClick = () => {
     if (searchText) {
       setIsSearched(true);
-      localStorage.setItem('lastSearch', searchText);
+
+      // Обновляем историю поиска
+      const updatedHistory = [searchText, ...searchHistory.filter(item => item !== searchText)].slice(0, 5);
+      setSearchHistory(updatedHistory);
+      localStorage.setItem('searchHistory', JSON.stringify(updatedHistory));
     }
   };
 
@@ -72,6 +76,15 @@ const SearchModal: React.FC<SearchModalProps> = observer(({ isOpen, onClose }) =
   };
 
 
+  const handleHistoryItemClick = (historyItem: string) => {
+    setSearchText(historyItem);
+    handleFindClick(); // Выполняем поиск сразу после выбора из истории
+  };
+
+  const handleClearHistory = () => {
+    setSearchHistory([]);
+    localStorage.removeItem('searchHistory');
+  };
   return (
     <>
       <Modal onClose={onClose} isOpen={isOpen}>
@@ -201,9 +214,31 @@ const SearchModal: React.FC<SearchModalProps> = observer(({ isOpen, onClose }) =
               {filteredDishes.length === 0 && filteredRestaurants.length === 0 && searchText && (
                 <div className="no-results">Ничего не найдено</div>
               )}
+
+              {!searchText && (
+                <div className="search-history">
+                  <div className="header">
+                    <h2>История поиска</h2>
+                    <button className='btn--default' onClick={handleClearHistory}>
+                      очистить
+                    </button>
+                  </div>
+
+                  <div className="history--list">
+                    {searchHistory.map((item, index) => (
+                      <div className='history--item' key={index} onClick={() => handleHistoryItemClick(item)}>
+                        <div className="icon">
+                          <SVG.LocationIcon />
+                        </div> <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+
+                </div>
+              )}
             </div>
           </div>
-
         </div>
       </Modal>
       <FilterModal onClose={() => setIsOpenFilter(false)} isOpen={isOpenFilter} />

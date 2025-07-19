@@ -6,6 +6,7 @@ import store from "../../shared/store";
 import { useParams } from "react-router";
 import { Dish, Restaurant } from "../../shared/types/types";
 
+import "./Menu.scss"
 // Определение типов
 
 
@@ -57,11 +58,14 @@ const Menu = observer(() => {
   return (
     <div className="menu--page">
       <Header text={restaurant?.name} />
-      <SliderHeader data={topNavMeuItems} activeTab={activeTab} setActiveTab={setActiveTab} />
-      <SearchField
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
+      <div className="menu-page--wrapper">
+        <SliderHeader data={topNavMeuItems} activeTab={activeTab} setActiveTab={setActiveTab} />
+        <SearchField
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </div>
+
       {restaurant && (
         <MenuCards
           menuItems={menuItems}

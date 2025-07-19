@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Input } from "../../../shared/ui";
 
 export default function BasketComment() {
-  const [comment, setComment] = useState("")
-
-  // Загружаем комментарий из localStorage при инициализации
-  useEffect(() => {
-    const savedComment = localStorage.getItem('orderComment')
-    if (savedComment) {
-      setComment(savedComment)
+  const [comment, setComment] = useState(() => {
+    const bookingData = localStorage.getItem('bookingData')
+    if (bookingData) {
+      const parsedData = JSON.parse(bookingData)
+      return parsedData.comment || ''
     }
-  }, [])
+    return ''
+  })
+  
 
   // Сохраняем комментарий в localStorage с дебаунсингом
   useEffect(() => {

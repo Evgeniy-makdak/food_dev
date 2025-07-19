@@ -39,7 +39,7 @@ export default function AddToCard({
             className="link-action"
             onClick={handleClick}
             style={{
-              backgroundColor: '#6C452B',
+              backgroundColor: '#db3702',
               color: '#fff',
               width: '100%',
               border: 'none',
@@ -55,7 +55,7 @@ export default function AddToCard({
           <LinkAction
             to='/backets'
             text={`Добавить в корзину • ${quantity} шт. • ${totalPrice} ₽`}
-            style={{backgroundColor: '#6C452B', color: '#fff'}}
+            style={{backgroundColor: '#db3702', color: '#fff'}}
           />
         )}
       </div>

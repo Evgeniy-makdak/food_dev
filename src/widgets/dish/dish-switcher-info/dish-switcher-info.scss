@@ -21,7 +21,7 @@
 }
 
 .b-pag-tab__item--active {
-  background: #6C452B;
+  background: #071f2b;
   color: #fff;
 }
 
@@ -84,4 +84,15 @@
   font-size: 16px;
   line-height: 20px;
   color: #301207;
+}
+
+.allergens--wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  .allergens-item{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 }

@@ -46,6 +46,10 @@ export default function BookingConfirmModal({
       if (bookingData.name) setName(bookingData.name);
       if (bookingData.comment) setComment(bookingData.comment);
     }
+    const phone = localStorage.getItem('confirmedPhoneNumber');
+    if (phone) {
+      setPhoneNumber(phone);
+    }
   }, []);
 
   useEffect(() => {
@@ -82,19 +86,27 @@ export default function BookingConfirmModal({
     };
 
     localStorage.setItem('bookingData', JSON.stringify(bookingData));
-    const confirmedPhoneNumber = localStorage.getItem('confirmedPhoneNumber');
-    const isPhoneConfirmed = localStorage.getItem('phoneConfirmed') === 'true';
+
+    // Сохраняем номер телефона как confirmedPhoneNumber
+    localStorage.setItem('confirmedPhoneNumber', phoneNumber);
+
+    // Устанавливаем флаг, что номер телефона подтвержден
+    // localStorage.setItem('phoneConfirmed', 'true');
+
+    const isPhoneConfirmed = localStorage.getItem('phoneConfirmed');
+
+    // const isPhoneConfirmed = true; // Теперь мы всегда считаем номер подтвержденным
+
     // Здесь можно добавить дополнительную логику, например, отправку данных на сервер
     onClose();
 
-    if (isPhoneConfirmed && confirmedPhoneNumber) {
+    if (isPhoneConfirmed) {
       // Если номер подтвержден, перенаправляем на страницу бронирования
       navigate('/booking', { replace: true });
     } else {
-      // Если номер не подтвержден, перенаправляем на страницу входа
+      // Этот блок теперь не будет выполняться, но оставим его на всякий случай
       navigate('/signin', { replace: true });
     }
-
   }
 
   // const formatDate = (dateString: string) => {
@@ -116,10 +128,20 @@ export default function BookingConfirmModal({
       <div className="booking-confirm">
         <Info name={restaurant?.name} addres={restaurant?.address} />
         <StatusOrder
-        // selectedGuests={selectedGuests}
-        // selectedDate={formatDate(selectedDate)} 
-        // selectedTime={selectedTime || undefined} 
-        // onUpdate={handleUpdate}
+          selectedGuests={selectedGuests}
+          selectedDate={selectedDate}
+          selectedTime={selectedTime}
+          onUpdate={(field) => {
+            // Здесь вы можете обновить соответствующее состояние
+            // Например:
+            if (field === 'selectedGuests') {
+              // onUpdate('selectedGuests', value as number);
+            } else if (field === 'selectedDate') {
+              // onUpdate('selectedDate', value as string);
+            } else if (field === 'selectedTime') {
+              // onUpdate('selectedTime', value as string);
+            }
+          }}
         />
 
         <div className="note">

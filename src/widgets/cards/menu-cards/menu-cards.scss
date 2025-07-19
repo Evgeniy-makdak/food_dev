@@ -40,11 +40,13 @@
   justify-content: space-between;
   // gap: 8px;
 }
-.dish-wrapper{
+
+.dish-wrapper {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .dish-delete {
   width: 32px;
   height: 32px;
@@ -87,7 +89,8 @@
   justify-content: space-between;
   padding: 0 4px;
 }
-.dish-slider-nav--right{
+
+.dish-slider-nav--right {
   transform: none !important;
   left: initial !important;
   right: 16px !important;
@@ -273,20 +276,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #6C452B;
+  background: rgb(219, 55, 2);
   border-radius: 8px;
   font-weight: 500;
   font-size: 16px;
   color: #fff;
 }
 
-.menu-cards{
+.menu-cards {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.cards{
+.cards {
   display: flex;
   flex-direction: column;
   gap: 16px;
