@@ -12,7 +12,7 @@ export default function ActiveButton({ text, style, onClick, disabled }: { text:
       disabled={disabled}
       style={{
         ...style,
-        borderRadius: '16px',
+        borderRadius: '8px',
         padding: '16px',
         cursor: 'pointer',
         textDecoration: 'none',

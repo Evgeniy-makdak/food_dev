@@ -1,5 +1,24 @@
 .wrapper-status-order {
   padding: 0 16px;
+  // margin: 20px 0;
+}
+
+.cancelled--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  button {
+    .icon {
+      border-radius: 16px;
+      width: 44px;
+      height: 44px;
+      background: rgba(183, 25, 25, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .show-menu {
@@ -32,6 +51,6 @@
   }
 }
 
-.header--wrapper{
+.header--wrapper {
   padding: 0 16px;
 }

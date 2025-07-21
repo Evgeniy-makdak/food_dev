@@ -1,6 +1,8 @@
 import { SVG } from '../../../shared/ui'
 
 export default function MapRestaurnatInfo({ restaurant }: { restaurant: any }) {
+
+  console.log(restaurant, "restaurantData");
   return (
     <div className="b-page-map">
       <div className="b-page-map-wrap">

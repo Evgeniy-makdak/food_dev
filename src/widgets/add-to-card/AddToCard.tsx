@@ -23,7 +23,8 @@ export default function AddToCard({
         price: dishData.price,
         quantity: quantity,
         totalPrice: totalPrice,
-        image: dishData.image
+        image: dishData.image,
+        restaurantId: dishData.restaurantId,
       }
 
       addToCart(cartItem)

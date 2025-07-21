@@ -3,13 +3,14 @@ import { useCart } from '../../features'
 import './order.scss'
 import { observer } from 'mobx-react-lite'
 import { BookingData } from '../../entities/booking-data/BookingData'
+import { useState } from 'react'
 // import { Restaurant } from '../../shared/types/types'
 
 const Order = observer(() => {
   const { cart, getTotalItems, getTotalPrice } = useCart()
   const totalItems = getTotalItems()
   const totalPrice = getTotalPrice()
-
+  const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
   // Если корзина пуста, показываем сообщение
   if (totalItems === 0) {
     return (
@@ -41,11 +42,11 @@ const Order = observer(() => {
           <OrderReservation restaurant={restaurant} />
           <OrderTime />
           <OrderCustomer bookingData={bookingData} />
-          <OrderMethodsPay />
+          <OrderMethodsPay selectedPayment={selectedPayment} setSelectedPayment={setSelectedPayment}/>
           <OrderTotalPay
             totalPrice={totalPrice}
           />
-          <OrderButtonAction  />
+          <OrderButtonAction  selectedPayment={selectedPayment}/>
         </div>
       )}
     </BookingData>

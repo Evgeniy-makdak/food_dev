@@ -5,6 +5,7 @@ import { formatPhoneNumber } from '../../shared/lib/formatPhoneNumber';
 import { ActiveButton } from '../../shared/ui/button';
 import { Header } from '../../widgets';
 import ConfirmNumberModal from '../../widgets/modal/confirm-number-modal/ConfirmNumberModal';
+import { SVG } from '../../shared/ui';
 
 export default function Auth() {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -13,12 +14,10 @@ export default function Auth() {
   const [isChecked, setIsChecked] = useState(false);
   useEffect(() => {
     // Получаем номер телефона из localStorage
-    const storedBookingData = localStorage.getItem('bookingData');
-    if (storedBookingData) {
-      const bookingData = JSON.parse(storedBookingData);
-      if (bookingData.phoneNumber) {
-        setPhoneNumber(formatPhoneNumber(bookingData.phoneNumber));
-      }
+    const storedPhoneNumber = localStorage.getItem('confirmedPhoneNumber');
+    if (storedPhoneNumber) {
+      // No need to parse JSON, just use the string directly
+      setPhoneNumber(formatPhoneNumber(storedPhoneNumber));
     }
   }, []);
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,7 +83,21 @@ export default function Auth() {
               />
             </div>
           </form>
-          {/* Остальной код остается без изменений */}
+          <span className='or'>или</span>
+          <div className="alternative--list">
+            <button className='alternative--btn btn--default'>
+              <div className="icon"><SVG.VKIcon /></div>
+              <span>В контакте</span>
+            </button>
+            <button className='alternative--btn btn--default'>
+              <div className="icon"><SVG.YAIcon /></div>
+              <span>Яндекс ID</span>
+            </button>
+            <button className='alternative--btn btn--default'>
+              <div className="icon"><img src="./services.png" alt="img" /></div>
+              <span>Госуслуги</span>
+            </button>
+          </div>
         </div>
       </div>
 

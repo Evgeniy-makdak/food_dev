@@ -264,6 +264,7 @@ export const cartUtils = {
   getOrdersByStatus: (status: 'submitted' | 'cancelled' | 'completed'): any[] => {
     try {
       const history = cartUtils.getOrderHistory()
+      console.log(history, "HISTORY")
       return history.filter(order => order.status === status)
     } catch (error) {
       console.error('Ошибка при фильтрации заказов по статусу:', error)
@@ -342,7 +343,7 @@ export const cartUtils = {
         // Очищаем текущий заказ
         cartUtils.clearCart()
         cartUtils.clearOrderComment()
-
+ 
         console.log(`Заказ из корзины отменен и сохранен в историю. Причина: ${reason}`)
       }
 

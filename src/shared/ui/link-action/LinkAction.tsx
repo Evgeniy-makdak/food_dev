@@ -10,7 +10,7 @@ export default function LinkAction({ text, style, to }: { text: string, style?: 
         textAlign: 'center',
         margin: '0 auto',
         display: 'block',
-        borderRadius: '16px',
+        borderRadius: '8px',
         padding: '12px 24px',
         fontSize: '16px',
         fontWeight: '500',

@@ -75,6 +75,7 @@ export interface ExtendedBasketItem extends BasketItem {
 }
 
 export interface CartItem {
+  restaurantId: number;
   id: string;
   name: string;
   price: number;
@@ -174,6 +175,7 @@ export interface AddToCardProps {
     title: string;
     price: number;
     image: string;
+    restaurantId: number;
   };
 }
 
@@ -275,7 +277,7 @@ export interface Rating {
 }
 
 export interface Dish {
-  id: number;
+  id: number | string;
   title: string;
   position: string;
   price: number;
@@ -342,4 +344,5 @@ export interface BookingData {
   name: string;
   comment?: string;
   status: string;
+  id: number; // Missing 'id' property
 }

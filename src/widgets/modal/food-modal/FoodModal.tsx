@@ -47,17 +47,16 @@ export default function FoodModal({ isOpen, onClose, dishData, restaurantData }:
           totalPrice={totalPrice}
           onAddToCart={() => {
             // Создаем стабильный ID на основе названия блюда
-            const stableId = dishData?.title
-              ? dishData.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
-              : 'unknown-dish'
+
 
             // Создаем объект для добавления в корзину
-            const cartItem = {
-              id: stableId,
+            const cartItem:any = {
+              id: dishData.id,
               name: dishData?.title || 'Блюдо',
               price: basePrice,
               quantity: quantity,
               totalPrice: totalPrice,
+              restaurantId: restaurantData.id,
               image: '/img/dish1.png'
             }
 

@@ -35,12 +35,12 @@ const SearchModal: React.FC<SearchModalProps> = observer(({ isOpen, onClose }) =
   useEffect(() => {
     if (searchText) {
       const dishes = restaurantsStore.dish
-        .filter((dish: { title: string }) => dish.title.toLowerCase().includes(searchText.toLowerCase()))
+        .filter((dish: Dish) => dish.title.toLowerCase().includes(searchText.toLowerCase()))
         .map((dish: Dish) => dish as Dish);
 
       const restaurants = restaurantsStore.restaurants
         .filter(restaurant => restaurant.name.toLowerCase().includes(searchText.toLowerCase()) ||
-          restaurant.menu.some((dishId: number) => dishes.some((dish: { id: number }) => dish.id === dishId)))
+          restaurant.menu.some((dishId: number) => dishes.some((dish: Dish) => dish.id === Number(dishId))))
         .map(restaurant => restaurant as Restaurant);
 
       setFilteredDishes(dishes);
@@ -70,7 +70,7 @@ const SearchModal: React.FC<SearchModalProps> = observer(({ isOpen, onClose }) =
 
   const handleDishClick = (dish: Dish) => {
     setSelectedDish(dish);
-    const restaurant = filteredRestaurants.find(r => r.menu.includes(dish.id));
+    const restaurant = filteredRestaurants.find(r => r.menu.includes(Number(dish.id)));
     setSelectedRestaurant(restaurant || null);
     setIsOpenFood(true);
   };

@@ -30,11 +30,16 @@ export default function CancelOrder({ isOpen, onClose, onConfirm }: CancelOrderP
     setIsSubmitting(true)
 
     try {
-      // Отменяем заказ (сохраняем в историю и очищаем текущий)
+      // Отменяем заказ (сохраняем в историю и обновляем статус)
       cartUtils.cancelCurrentOrder(selectedReason)
 
+      // Обновляем статус бронирования на "cancelled"
+      const bookingData = JSON.parse(localStorage.getItem('bookingData') || '{}')
+      bookingData[0].status = 'cancelled'
+      localStorage.setItem('bookingData', JSON.stringify(bookingData))
+
       clearCart()
-      localStorage.removeItem('bookingData')
+      
       // Показываем уведомление
       alert('Бронирование отменено и перемещено в раздел "Отмененные"')
 

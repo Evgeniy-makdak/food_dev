@@ -5,7 +5,7 @@ import store from '../../shared/store';
 import { useEffect, useState } from 'react';
 import { BookingData, Restaurant } from '../../shared/types/types';
 
-const CurrentBooking = observer(({ bookingData }: { bookingData: BookingData }) => {
+const CurrentBooking = observer(({ bookingData, title="Текущие бронирования" }: { bookingData: BookingData, title?: string }) => {
   const { restaurantsStore } = store
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null)
   const [loading, setLoading] = useState(true)
@@ -48,7 +48,7 @@ const CurrentBooking = observer(({ bookingData }: { bookingData: BookingData }) 
   return (
     <section>
 
-      <h3>Текущие бронирования</h3>
+      <h3>{title}</h3>
       <div className="b-page-box b-page-box--middle b-page--mt20 b-page-box--shadow">
         <div className="b-page-box-img b-page-box-img--rectangular">
           {/* <img src="./img/img/1.png" alt="img"> */}

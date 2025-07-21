@@ -12,27 +12,29 @@ import { Restaurant } from '../../../shared/types/types'
 
 const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaurant }: { isOrderSubmitted: boolean, activeTab: string, setActiveTab: React.Dispatch<React.SetStateAction<string>>, restaurant: Restaurant | null }) => {
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
-  const [wishes, setWishes] = useState<string>('')
+  // const [wishes, setWishes] = useState<string>('')
   const [comment, setComment] = useState<string>('')
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const savedWishes = localStorage.getItem('wishes')
-    if (savedWishes) {
-      setWishes(savedWishes)
-    }
-  }, [])
 
-  useEffect(() => {
-    localStorage.setItem('wishes', wishes)
-  }, [wishes])
+  console.log(restaurant, "restaurant data")
+  // useEffect(() => {
+  //   const savedWishes = localStorage.getItem('wishes')
+  //   if (savedWishes) {
+  //     setWishes(savedWishes)
+  //   }
+  // }, [])
+
+  // useEffect(() => {
+  //   localStorage.setItem('wishes', wishes)
+  // }, [wishes])
 
   useEffect(() => {
     const loadBookingData = () => {
       const storedBookingData = localStorage.getItem('bookingData')
       if (storedBookingData) {
         const bookingData = JSON.parse(storedBookingData)
-        setComment(bookingData.comment || '')
+        setComment(bookingData[0].comment || '')
       }
     }
 

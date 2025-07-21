@@ -22,8 +22,8 @@ const StatusOrderContent: React.FC<StatusOrderProps> = ({
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
   useEffect(() => {
-    const bookingData = JSON.parse(localStorage.getItem('bookingData') || '{}');
-
+    const bookingDataStorage = JSON.parse(localStorage.getItem('bookingData') || '{}');
+    const bookingData = bookingDataStorage[0];
     setSelectedGuests(propSelectedGuests ?? bookingData.selectedGuests ?? null);
     setSelectedDate(propSelectedDate ?? bookingData.selectedDate ?? '');
     setSelectedTime(propSelectedTime ?? bookingData.selectedTime ?? null);
@@ -151,8 +151,26 @@ const StatusOrderContent: React.FC<StatusOrderProps> = ({
             }}
           />
           <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
-            <button onClick={() => setIsCalendarOpen(false)}>Отмена</button>
-            <button onClick={() => setIsCalendarOpen(false)}>Выбрать</button>
+            <button
+              style={{
+                padding: '10px 20px',
+                border: '1px solid #6C452B',
+                background: '#fff',
+                color: '#6C452B',
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}
+              onClick={() => setIsCalendarOpen(false)}>Отмена</button>
+            <button
+              style={{
+                padding: '10px 20px',
+                border: 'none',
+                background: '#6C452B',
+                color: '#fff',
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}
+              onClick={() => setIsCalendarOpen(false)}>Выбрать</button>
           </div>
         </div>
       </Modal>
@@ -164,7 +182,7 @@ const StatusOrderContent: React.FC<StatusOrderProps> = ({
           <div className="time-categories">
             {Object.entries(timeCategories).map(([key, category]) => (
               <div key={key} className="time-category">
-                <h4>{category.title}</h4>
+                  <h4 className="category-title">{timeCategories.morning.title}</h4>
                 <div className="category-times">
                   {category.times.map((time) => (
                     <div
@@ -173,7 +191,7 @@ const StatusOrderContent: React.FC<StatusOrderProps> = ({
                         handleUpdate('selectedTime', time)
                         setIsTimeOpen(false)
                       }}
-                      className={`time-slot ${selectedTime === time ? 'selected' : ''}`}
+                        className={`time-slot ${selectedTime === time ? 'selected' : ''}`}
                     >
                       {time}
                     </div>
@@ -190,13 +208,59 @@ const StatusOrderContent: React.FC<StatusOrderProps> = ({
         <div style={{ padding: '20px' }}>
           <h3 style={{ marginBottom: '20px', textAlign: 'center' }}>Количество людей</h3>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '20px' }}>
-            <button onClick={() => handleUpdate('selectedGuests', Math.max(1, (selectedGuests ?? 1) - 1))}>-</button>
+            <button
+              style={{
+                width: '40px',
+                height: '40px',
+                border: '1px solid #6C452B',
+                background: '#fff',
+                color: '#6C452B',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                fontSize: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              onClick={() => handleUpdate('selectedGuests', Math.max(1, (selectedGuests ?? 1) - 1))}>-</button>
             <span>{selectedGuests ?? 1}</span>
-            <button onClick={() => handleUpdate('selectedGuests', Math.min(20, (selectedGuests ?? 1) + 1))}>+</button>
+            <button
+              style={{
+                width: '40px',
+                height: '40px',
+                border: '1px solid #6C452B',
+                background: '#6C452B',
+                color: '#fff',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                fontSize: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              onClick={() => handleUpdate('selectedGuests', Math.min(20, (selectedGuests ?? 1) + 1))}>+</button>
           </div>
           <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
-            <button onClick={() => setIsPersonsOpen(false)}>Отмена</button>
-            <button onClick={() => setIsPersonsOpen(false)}>Выбрать</button>
+            <button
+              style={{
+                padding: '10px 20px',
+                border: '1px solid #6C452B',
+                background: '#fff',
+                color: '#6C452B',
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}
+              onClick={() => setIsPersonsOpen(false)}>Отмена</button>
+            <button
+              style={{
+                padding: '10px 20px',
+                border: 'none',
+                background: '#6C452B',
+                color: '#fff',
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}
+              onClick={() => setIsPersonsOpen(false)}>Выбрать</button>
           </div>
         </div>
       </Modal>

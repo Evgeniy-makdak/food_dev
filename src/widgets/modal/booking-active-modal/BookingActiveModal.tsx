@@ -16,6 +16,9 @@ export default function BookingActiveModal({ isOpen, onClose, restaurant }: { is
   const [isTimeSelected, setIsTimeSelected] = useState(false);
   const [isOpenConfirm, setIsOpenConfirm] = useState(false);
 
+
+console.log(restaurant, "restaurant data")
+
   const onUpdate = (field: string, value: string | number | Date) => {
     switch (field) {
       case 'selectedHall':

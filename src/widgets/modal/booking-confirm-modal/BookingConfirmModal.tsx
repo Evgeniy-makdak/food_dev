@@ -74,7 +74,8 @@ export default function BookingConfirmModal({
   }
 
   const handleBooking = () => {
-    const bookingData = {
+    const newBooking = {
+      id: Date.now().toString(), // Уникальный идентификатор для каждого заказа
       restaurantId: restaurant.id,
       selectedHall,
       selectedGuests,
@@ -82,22 +83,37 @@ export default function BookingConfirmModal({
       selectedTime,
       phoneNumber,
       name,
-      comment
+      comment,
+      status: 'current',
+      createdAt: new Date().toISOString(),
     };
 
-    localStorage.setItem('bookingData', JSON.stringify(bookingData));
+    // Получаем существующие заказы из localStorage
+    let existingBookings = [];
+    try {
+      const storedData = localStorage.getItem('bookingData');
+      if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        // Ensure existingBookings is an array
+        existingBookings = Array.isArray(parsedData) ? parsedData : [];
+      }
+    } catch (error) {
+      console.error('Error parsing bookingData from localStorage:', error);
+      // If there's an error, use an empty array
+      existingBookings = [];
+    }
+
+    // Добавляем новый заказ к существующим
+    const updatedBookings = [newBooking, ...existingBookings];
+
+    // Сохраняем обновленный массив заказов в localStorage
+    localStorage.setItem('bookingData', JSON.stringify(updatedBookings));
 
     // Сохраняем номер телефона как confirmedPhoneNumber
     localStorage.setItem('confirmedPhoneNumber', phoneNumber);
 
-    // Устанавливаем флаг, что номер телефона подтвержден
-    // localStorage.setItem('phoneConfirmed', 'true');
-
     const isPhoneConfirmed = localStorage.getItem('phoneConfirmed');
 
-    // const isPhoneConfirmed = true; // Теперь мы всегда считаем номер подтвержденным
-
-    // Здесь можно добавить дополнительную логику, например, отправку данных на сервер
     onClose();
 
     if (isPhoneConfirmed) {

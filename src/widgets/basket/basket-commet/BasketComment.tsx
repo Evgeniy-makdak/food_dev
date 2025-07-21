@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Input } from "../../../shared/ui";
 
 export default function BasketComment() {
@@ -6,20 +6,20 @@ export default function BasketComment() {
     const bookingData = localStorage.getItem('bookingData')
     if (bookingData) {
       const parsedData = JSON.parse(bookingData)
-      return parsedData.comment || ''
+      return parsedData[0].comment || ''
     }
     return ''
   })
   
 
   // Сохраняем комментарий в localStorage с дебаунсингом
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      localStorage.setItem('orderComment', comment)
-    }, 500) // 500мс задержка для комментария
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     localStorage.setItem('orderComment', comment)
+  //   }, 500) // 500мс задержка для комментария
 
-    return () => clearTimeout(timer)
-  }, [comment])
+  //   return () => clearTimeout(timer)
+  // }, [comment])
 
   const handleCommentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setComment(e.target.value)

@@ -114,7 +114,7 @@ const MenuCard: React.FC<MenuCardProps> = memo(function MenuCard({
                 }}
               />
             ) : (
-              additionalParams !== "search" ? (
+              additionalParams === "search" ? (
                 <button className="dish-btn btn--default" style={{ cursor: 'pointer' }} title="Добавить в корзину">
                   <SVG.PlusIcon />
                 </button>
