@@ -7,6 +7,7 @@ import './BasketActionHeader.scss'
 export default function BasketActionHeader({
   items,
   totalItems,
+  clearCart
 }: BasketActionHeaderProps) {
   const displayItems = totalItems || items.length
 
@@ -19,7 +20,7 @@ export default function BasketActionHeader({
         <div className="b-page-icon">
           <SVG.SearchIcon2 />
         </div>
-        <div className="b-page-icon">
+        <div className="b-page-icon" onClick={clearCart}>
           <SVG.DeleteIcon />
         </div>
       </div>

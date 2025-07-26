@@ -4,7 +4,7 @@ import { useCart } from '../../features'
 import "./basket.scss"
 
 export default function Basket() {
-  const { cart, removeFromCart, updateQuantity } = useCart()
+  const { cart, removeFromCart, updateQuantity, clearCart } = useCart()
 
   // Мемоизируем преобразование данных для избежания лишних пересчетов
   const basketItems = useMemo(() =>
@@ -43,6 +43,7 @@ export default function Basket() {
         items={basketItems}
         totalItems={totalItems}
         totalPrice={totalPrice}
+        clearCart={clearCart}
       />
       <BasketCards
         items={basketItems}

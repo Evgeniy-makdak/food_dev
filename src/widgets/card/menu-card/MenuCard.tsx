@@ -41,7 +41,7 @@ const MenuCard: React.FC<MenuCardProps> = memo(function MenuCard({
 
   const handleDeleteClick = useCallback(() => {
     if (onRemoveItem) {
-      onRemoveItem(item.id.toString());
+      onRemoveItem(item.id);
     }
   }, [onRemoveItem, item.id]);
 

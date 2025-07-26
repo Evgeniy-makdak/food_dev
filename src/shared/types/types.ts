@@ -183,6 +183,7 @@ export interface BasketActionHeaderProps {
   items: ExtendedBasketItem[];
   totalItems?: number;
   totalPrice?: number;
+  clearCart?: any;
 }
 
 export interface BasketButtonActionProps {
