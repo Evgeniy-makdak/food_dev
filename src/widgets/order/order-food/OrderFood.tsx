@@ -9,13 +9,11 @@ import CancelOrder from '../../cancel-order/CancelOrder'
 import MapRestaurnatInfo from '../../map/map-restaurant-info/MapRestaurnatInfo'
 import { Restaurant } from '../../../shared/types/types'
 
-
 const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaurant }: { isOrderSubmitted: boolean, activeTab: string, setActiveTab: React.Dispatch<React.SetStateAction<string>>, restaurant: Restaurant | null }) => {
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
   // const [wishes, setWishes] = useState<string>('')
   const [comment, setComment] = useState<string>('')
   const navigate = useNavigate();
-
 
   console.log(restaurant, "restaurant data")
   // useEffect(() => {
@@ -59,17 +57,18 @@ const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaur
       localStorage.setItem('bookingData', JSON.stringify(bookingData))
     }
   }
-  // const handleRedirectToMenu = () => {
-  //   navBarStore.setActive('menu');
-  //   navigate('/menu');
-  // };
-
-
 
   const handleCancelConfirm = () => {
     // После отмены заказа перенаправляем на главную страницу
     navigate('/')
   }
+
+  const handleBookAgain = () => {
+    window.scrollTo(0, 0);
+    setActiveTab('current');
+    navigate('/baskets'); // Добавлена навигация на страницу корзины
+  }
+
   return (
     <section>
       <div className="">
@@ -89,13 +88,10 @@ const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaur
         </div>
 
         <div className="mt-32">
-
           <MapRestaurnatInfo restaurant={restaurant} />
         </div>
 
-
         <div className="links--action b-page--mt48">
-
           {(activeTab !== 'cancelled') &&
             <ActiveButton
               text='Отмена'
@@ -106,7 +102,6 @@ const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaur
                 width: '100%',
               }}
               onClick={() => {
-
                 setIsCancelModalOpen(!isCancelModalOpen)
               }}
             />
@@ -118,30 +113,23 @@ const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaur
                 text='Забронировать снова'
                 style={{
                   color: '#fff',
-                  background: '#6C452B',
+                  background: '#db3702',
                   border: 'none',
                   width: '100%',
                 }}
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                  setActiveTab('current')
-
-                }}
+                onClick={handleBookAgain} // Исправленный обработчик
               />
             )
           }
 
-
-
           <LinkAction
             text='Позвонить в ресторан'
             to='tel:+9876373737'
-            style={
-              {
-                color: '#6C452B',
-                background: '#fff',
-                border: '1px solid #6C452B',
-              }} />
+            style={{
+              color: '#6C452B',
+              background: '#fff',
+              border: '1px solid #6C452B',
+            }} />
         </div>
 
         {/* Модальное окно отмены */}
@@ -150,11 +138,9 @@ const OrderFood = observer(({ isOrderSubmitted, activeTab, setActiveTab, restaur
           onClose={() => setIsCancelModalOpen(false)}
           onConfirm={handleCancelConfirm}
         />
-
-
       </div>
     </section>
-
   )
 })
+
 export default OrderFood
