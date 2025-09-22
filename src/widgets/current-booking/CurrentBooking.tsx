@@ -58,7 +58,7 @@ const CurrentBooking = observer(({ bookingData, title="Текущие брони
           <div className="b-page-box__tittle">{restaurant.name}</div>
           <div className="b-page-box-flex-wrap b-page-box-flex-wrap--gap8">
             {Array(5).fill(0).map((_, index) => (
-              <SVG.StarIcon key={index} fill='#D5ED00' />
+              <SVG.StarIcon key={index} fill='#f5b319ff' />
             ))}
           </div>
         </div>

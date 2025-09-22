@@ -27,7 +27,7 @@ export default function DishCard({
         </div>
         <a href="#" className="dish-grade-link">
           <div>
-            <SVG.StarIcon fill='#D5ED00' />
+            <SVG.StarIcon fill='#f5b319ff' />
             <p className="b-page--ml2">{dishData.rating.value}</p>
           </div>
           <span>{`${dishData.rating.count} оценок`}</span>

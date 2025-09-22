@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { SVG } from '../../../shared/ui'
 
 export default function MapRestaurnatInfo({ restaurant }: { restaurant: any }) {
@@ -23,7 +24,7 @@ export default function MapRestaurnatInfo({ restaurant }: { restaurant: any }) {
             </div>
           </div>
           <div className="dish-grade dish-grade--map">
-            <SVG.StarIcon fill='#D5ED00' />
+            <SVG.StarIcon fill='#f5b319ff' />
             <p className="b-page--ml2">{restaurant?.rating.total}</p>
           </div>
         </div>

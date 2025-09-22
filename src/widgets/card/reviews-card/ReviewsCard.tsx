@@ -34,7 +34,7 @@ export default function Reviews({ reviewsId }: { reviewsId: number }) {
           {Array(5).fill(null).map((_, index) => (
             <SVG.StarIcon
               key={index}
-              fill={index < rating ? '#E3A400' : '#CCCCCC'}
+              fill={index < rating ? '#fab356ff' : '#CCCCCC'}
               size="22"
             />
           ))}

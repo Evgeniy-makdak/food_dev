@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LikeButton, SVG } from '../../../shared/ui'
 import IsOpen from '../../../shared/ui/common/is-open/IsOpen'
 import img from "../../../../public/img/1.png"
